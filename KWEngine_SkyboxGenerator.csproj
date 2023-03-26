@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="placeholderBack.png" />
+    <None Remove="placeholderBottom.png" />
+    <None Remove="placeholderFront.png" />
+    <None Remove="placeholderLeft - Kopieren.png" />
+    <None Remove="placeholderLeft.png" />
+    <None Remove="placeholderRight.png" />
+    <None Remove="placeholderTop.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Drawing.Common" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="placeholderBack.png" />
+    <Resource Include="placeholderBottom.png" />
+    <Resource Include="placeholderFront.png" />
+    <Resource Include="placeholderLeft.png" />
+    <Resource Include="placeholderRight.png" />
+    <Resource Include="placeholderTop.png" />
+  </ItemGroup>
+
+</Project>

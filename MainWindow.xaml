@@ -1,0 +1,39 @@
+﻿<Window x:Class="KWEngine_SkyboxGenerator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KWEngine_SkyboxGenerator"
+        mc:Ignorable="d"
+        Title="KWEngine Skybox Generator" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition x:Name="SkyboxColumn" Width="5*"/>
+            <ColumnDefinition x:Name="ActionColumn"/>
+        </Grid.ColumnDefinitions>
+        <Border BorderBrush="Black" BorderThickness="2" />
+        <Grid Grid.Row="0" Grid.Column="0" Background="GhostWhite">
+            
+            <Grid.ColumnDefinitions>
+                
+                <ColumnDefinition x:Name="Column0"/>
+                <ColumnDefinition x:Name="Column1"/>
+                <ColumnDefinition x:Name="Column2"/>
+                <ColumnDefinition x:Name="Column3"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition x:Name="Row0"/>
+                <RowDefinition x:Name="Row1"/>
+                <RowDefinition x:Name="Row2"/>
+            </Grid.RowDefinitions>
+            
+            <Image Grid.Row="1" Grid.Column="0" x:Name="ImageLeft" Source="placeholderLeft.png" Drop="Image_Drop" AllowDrop="True" Margin="8,8,8,8" />
+            <Image Grid.Row="1" Grid.Column="1" x:Name="ImageFront" Source="placeholderFront.png" Drop="Image_Drop" AllowDrop="True" Margin="8,8,8,8"/>
+            <Image Grid.Row="1" Grid.Column="2" x:Name="ImageRight" Source="placeholderRight.png" Drop="Image_Drop" AllowDrop="True" Margin="8,8,8,8"/>
+            <Image Grid.Row="1" Grid.Column="3" x:Name="ImageBack" Source="placeholderBack.png" Drop="Image_Drop" AllowDrop="True" Margin="8,8,8,8"/>
+            <Image Grid.Row="0" Grid.Column="1" x:Name="ImageTop" Source="placeholderTop.png" Drop="Image_Drop" AllowDrop="True" Margin="8,8,8,8"/>
+            <Image Grid.Row="2" Grid.Column="1" x:Name="ImageBottom" Source="placeholderBottom.png" Drop="Image_Drop" AllowDrop="True" Margin="8,8,8,8"/>
+        </Grid>
+        <Button Grid.Column="1" Grid.Row="0" Content="Generate Skybox" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="4,4,4,4" Click="Button_Click"/>
+    </Grid>
+</Window>
