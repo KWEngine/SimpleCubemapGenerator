@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using Image = System.Windows.Controls.Image;
 
 namespace KWEngine_SkyboxGenerator
 {
@@ -31,10 +32,17 @@ namespace KWEngine_SkyboxGenerator
                 if (files.Length == 1)
                 {
                     //Bitmap
-                    BitmapImage bmp = new BitmapImage(new Uri(files[0]));
-                    if (bmp != null)
+                    try
                     {
-                        (sender as System.Windows.Controls.Image).Source = bmp;
+                        BitmapImage bmp = new BitmapImage(new Uri(files[0]));
+                        if (bmp != null)
+                        {
+                            (sender as System.Windows.Controls.Image).Source = bmp;
+                        }
+                    }
+                    catch(Exception)
+                    {
+                        MessageBox.Show("Not a valid image file.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 }
                 else
@@ -77,8 +85,7 @@ namespace KWEngine_SkyboxGenerator
                 Bitmap bmp = GenerateUnifiedCubemapFromImages(left, right, front, back, top, bottom);
                 SaveFileDialog sfd = new SaveFileDialog();
                 sfd.DefaultExt = "png";
-                sfd.Filter =
-                    "PNG image (*.png)|*.png";
+                sfd.Filter = "PNG image (*.png)|*.png";
                 sfd.InitialDirectory =
                     Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
                 bool? result = sfd.ShowDialog();
@@ -137,6 +144,31 @@ namespace KWEngine_SkyboxGenerator
                 bitmap = new System.Drawing.Bitmap(outStream);
             }
             return bitmap;
+        }
+
+        private void Image_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            if (sender != null && sender is Image)
+            {
+                OpenFileDialog dlg = new OpenFileDialog();
+                dlg.Filter = "All Files (*.*)|*.*|PNG image (*.png)|*.png|BMP image (*.bmp)|*.bmp|JPG image (*.jpg)|*.jpg|JPG image (*.jpeg)|*.jpeg|JFIF image (*.jfif)|*.jfif";
+                bool? result = dlg.ShowDialog();
+                if(result.HasValue)
+                {
+                    try
+                    {
+                        BitmapImage bmp = new BitmapImage(new Uri(dlg.FileName));
+                        if (bmp != null)
+                        {
+                            (sender as System.Windows.Controls.Image).Source = bmp;
+                        }
+                    }
+                    catch(Exception)
+                    {
+                        MessageBox.Show("Not a valid image file.", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                }
+            }
         }
     }
 #pragma warning restore CS8602 // Dereferenzierung eines möglichen Nullverweises.

@@ -27,12 +27,12 @@
                 <RowDefinition x:Name="Row2"/>
             </Grid.RowDefinitions>
             
-            <Image Grid.Row="1" Grid.Column="0" x:Name="ImageLeft" Source="placeholderLeft.png" Drop="Image_Drop" AllowDrop="True" Margin="8,8,8,8" />
-            <Image Grid.Row="1" Grid.Column="1" x:Name="ImageFront" Source="placeholderFront.png" Drop="Image_Drop" AllowDrop="True" Margin="8,8,8,8"/>
-            <Image Grid.Row="1" Grid.Column="2" x:Name="ImageRight" Source="placeholderRight.png" Drop="Image_Drop" AllowDrop="True" Margin="8,8,8,8"/>
-            <Image Grid.Row="1" Grid.Column="3" x:Name="ImageBack" Source="placeholderBack.png" Drop="Image_Drop" AllowDrop="True" Margin="8,8,8,8"/>
-            <Image Grid.Row="0" Grid.Column="1" x:Name="ImageTop" Source="placeholderTop.png" Drop="Image_Drop" AllowDrop="True" Margin="8,8,8,8"/>
-            <Image Grid.Row="2" Grid.Column="1" x:Name="ImageBottom" Source="placeholderBottom.png" Drop="Image_Drop" AllowDrop="True" Margin="8,8,8,8"/>
+            <Image Grid.Row="1" Grid.Column="0" x:Name="ImageLeft" Source="placeholderLeft.png" Drop="Image_Drop" MouseLeftButtonDown="Image_MouseLeftButtonDown" AllowDrop="True" Margin="8,8,8,8" />
+            <Image Grid.Row="1" Grid.Column="1" x:Name="ImageFront" Source="placeholderFront.png" Drop="Image_Drop" MouseLeftButtonDown="Image_MouseLeftButtonDown" AllowDrop="True" Margin="8,8,8,8"/>
+            <Image Grid.Row="1" Grid.Column="2" x:Name="ImageRight" Source="placeholderRight.png" Drop="Image_Drop" MouseLeftButtonDown="Image_MouseLeftButtonDown" AllowDrop="True" Margin="8,8,8,8"/>
+            <Image Grid.Row="1" Grid.Column="3" x:Name="ImageBack" Source="placeholderBack.png" Drop="Image_Drop" MouseLeftButtonDown="Image_MouseLeftButtonDown" AllowDrop="True" Margin="8,8,8,8"/>
+            <Image Grid.Row="0" Grid.Column="1" x:Name="ImageTop" Source="placeholderTop.png" Drop="Image_Drop" MouseLeftButtonDown="Image_MouseLeftButtonDown" AllowDrop="True" Margin="8,8,8,8"/>
+            <Image Grid.Row="2" Grid.Column="1" x:Name="ImageBottom" Source="placeholderBottom.png" Drop="Image_Drop" MouseLeftButtonDown="Image_MouseLeftButtonDown" AllowDrop="True" Margin="8,8,8,8"/>
         </Grid>
         <Button Grid.Column="1" Grid.Row="0" Content="Generate Skybox" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="4,4,4,4" Click="Button_Click"/>
     </Grid>
