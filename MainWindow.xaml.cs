@@ -153,7 +153,8 @@ namespace KWEngine_SkyboxGenerator
                 OpenFileDialog dlg = new OpenFileDialog();
                 dlg.Filter = "All Files (*.*)|*.*|PNG image (*.png)|*.png|BMP image (*.bmp)|*.bmp|JPG image (*.jpg)|*.jpg|JPG image (*.jpeg)|*.jpeg|JFIF image (*.jfif)|*.jfif";
                 bool? result = dlg.ShowDialog();
-                if(result.HasValue)
+                
+                if(result.HasValue && result.Value)
                 {
                     try
                     {
