@@ -9,6 +9,7 @@
     <IsPublishable>False</IsPublishable>
     <StartupObject>KWEngine_SkyboxGenerator.App</StartupObject>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>skybox_icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -27,6 +28,10 @@
     <None Remove="placeholderLeft.png" />
     <None Remove="placeholderRight.png" />
     <None Remove="placeholderTop.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="skybox_icon.ico" />
   </ItemGroup>
 
   <ItemGroup>

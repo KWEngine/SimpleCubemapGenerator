@@ -5,6 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KWEngine_SkyboxGenerator"
         mc:Ignorable="d"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
         Title="KWEngine Skybox Generator" Height="450" Width="672">
     <Grid>
         <Grid.ColumnDefinitions>
